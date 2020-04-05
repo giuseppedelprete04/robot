@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+
+<robot name="Kuka_LBR_iiwa7_R800" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="$(find rl_seven_degrees_robot)/urdf/robot_macro.xacro" />
+
+		<xacro:base_link_macro
+			base_link_name="base_link">
+		</xacro:base_link_macro>
+
+		<xacro:robot_joint
+			name="first_joint"
+			type="revolute"
+			parent="base_link"
+			child="first_link">
+			<origin xyz="0 0 0.1" />
+			<axis xyz="0 0 1"/>
+		</xacro:robot_joint>
+
+		<xacro:robot_link name="first_link">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</xacro:robot_link>
+
+		<xacro:robot_joint
+			name="second_joint"
+			type="revolute"
+			parent="first_link"
+			child="second_link">
+			<origin xyz="0.05 0 0.15" />
+			<axis xyz="1 0 0"/>
+		</xacro:robot_joint>
+
+		<xacro:robot_link name="second_link">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.57 0"/>
+		</xacro:robot_link>
+
+    <xacro:robot_joint
+			name="third_joint"
+			type="revolute"
+			parent="second_link"
+			child="third_link">
+			<origin xyz="0.15 0 0.05" />
+			<axis xyz="0 0 1"/>
+		</xacro:robot_joint>
+
+    <xacro:robot_link name="third_link">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</xacro:robot_link>
+
+    <xacro:robot_joint
+			name="fourth_joint"
+			type="revolute"
+			parent="third_link"
+			child="fourth_link">
+			<origin xyz="0.05 0 0.15" />
+			<axis xyz="-1 0 0"/>
+		</xacro:robot_joint>
+
+		<xacro:robot_link name="fourth_link">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="-0.1 0 0" rpy="0 1.57 0"/>
+		</xacro:robot_link>
+
+    <xacro:robot_joint
+			name="fifth_joint"
+			type="revolute"
+			parent="fourth_link"
+			child="fifth_link">
+			<origin xyz="-0.25 0 0.05" />
+			<axis xyz="0 0 1"/>
+		</xacro:robot_joint>
+
+    <xacro:robot_link name="fifth_link">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</xacro:robot_link>
+
+    <xacro:robot_joint
+			name="sixth_joint"
+			type="revolute"
+			parent="fifth_link"
+			child="sixth_link">
+			<origin xyz="0.05 0 0.15" />
+			<axis xyz="1 0 0"/>
+		</xacro:robot_joint>
+
+		<xacro:robot_link name="sixth_link">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.57 0"/>
+		</xacro:robot_link>
+
+    <xacro:robot_joint
+			name="seventh_joint"
+			type="revolute"
+			parent="sixth_link"
+			child="seventh_link">
+			<origin xyz="0.15 0 0.05" />
+			<axis xyz="0 0 1"/>
+		</xacro:robot_joint>
+
+    <xacro:robot_link name="seventh_link">
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</xacro:robot_link>
+
+</robot>
